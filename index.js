@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 3000;
 const apiKey=process.env.API_KEY;
 const graphqlEndpoint=process.env.GRAPHQLLINK;
 const admin_pass=process.env.HASURAADMIN;
+const apiHost=process.env.APIHOST;
 
 // console.log(apiKey+ graphqlEndpoint + admin_pass);
 
@@ -141,11 +142,11 @@ app.post('/api/summarize', async (req, res) => {
   },
   headers: {
     'x-rapidapi-key': apiKey,
-    'x-rapidapi-host': 'youtube-transcript3.p.rapidapi.com'
+    'x-rapidapi-host': apiHost,
   }
 };
 	const response = await axios.request(options);
-  console.log(response.data);
+  // console.log(response.data);
     res.json(response.data);
   const usertId=userId;
     insertIntoNhost(usertId,videoUrl,response.data.transcript);
