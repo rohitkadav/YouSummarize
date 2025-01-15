@@ -16,9 +16,6 @@ const graphqlEndpoint=process.env.GRAPHQLLINK;
 const admin_pass=process.env.HASURAADMIN;
 const apiHost=process.env.APIHOST;
 
-// console.log(apiKey+ graphqlEndpoint + admin_pass);
-
-
 // Middleware
 app.use(cors());
 app.use(express.json());
