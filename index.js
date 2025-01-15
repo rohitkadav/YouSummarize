@@ -101,6 +101,9 @@ async function insertIntoNhost(userId,videoUrl,summary) {
   }
 }
 // Routes
+app.get("/",(req,res)=> {
+  res.render("index.html");
+})
 app.post('/api/register', async (req, res) => {
   try {
     const { email, password } = req.body;
