@@ -1,11 +1,13 @@
 import express, { query } from 'express';
 import cors from 'cors';
-import nhost from './nhost.js';
 import fetch from 'node-fetch';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import { NhostClient } from '@nhost/nhost-js';
 
 // Load environment variables from the .env file
+
+//Load environment variables from the .env file
 dotenv.config();
 
 
@@ -15,6 +17,9 @@ const apiKey=process.env.API_KEY;
 const graphqlEndpoint=process.env.GRAPHQLLINK;
 const admin_pass=process.env.HASURAADMIN;
 const apiHost=process.env.APIHOST;
+const subDom=process.env.SUBDOMAIN;
+const regionHost=process.env.REGION;
+
 
 // Middleware
 app.use(cors());
@@ -22,6 +27,10 @@ app.use(express.json());
 app.use(express.static('public'));
 
 //Functions
+const nhost = new NhostClient({
+  subdomain: subDom, // Replace with your project subdomain
+  region: regionHost,        // Replace with your region, e.g., "us-east-1"
+});
 
 async function signOutUser(req,res) {
   try {
