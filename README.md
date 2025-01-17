@@ -21,7 +21,7 @@ A web application that enables users to input YouTube URLs and receive AI-genera
 
 5. **AI Workflow Integration:**
    - Leverage the n8n AI-powered YouTube Video Summarization workflow for seamless transcript fetching and summarization.
-   - Use OpenRouter to integrate language models for generating high-quality summaries.
+   - Use Rapid API to integrate language models for generating high-quality summaries.
 
 6. **Responsive Design:**
    - Fully responsive user interface optimized for both desktop and mobile devices.
@@ -74,7 +74,7 @@ A web application that enables users to input YouTube URLs and receive AI-genera
    - Update the environment variables to include your Nhost project credentials.
 
 3. **Frontend Setup:**
-   - Open [Bolt.new](https://bolt.new) and import the project.
+   - import the project and keep the files in public.
    - Customize the user interface as needed and link it to the Nhost backend.
 
 4. **AI Workflow Integration:**
